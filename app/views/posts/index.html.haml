@@ -1,16 +1,15 @@
 - if user_signed_in?
 	%p#intro
 		Hello
-		= current_user.name
 		%br/
 		%span
-			Share your inspiration and see what's inspiring others.
+			Share your Breed and see who likes this.
 - else
 	%p#intro
-		What's your Breed?
+		What's the Breed?
 		%br/
 		%span
-			Share your inspiration and see what's inspiring others.
+			Share your Breed and see who likes this.
 #posts
 	- @posts.each do |post|
 		.post
@@ -20,9 +19,6 @@
 				.title
 					%h2= link_to post.title, post
 				.data.clearfix
-					%p.username
-						Shared by
-						= post.user.name
 					%p.buttons
 						%span
 							%i.fa.fa-comments-o
